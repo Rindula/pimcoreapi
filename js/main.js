@@ -21,6 +21,7 @@ function transformTag(tagIdOrElem, tagType){
     var elem = (tagIdOrElem instanceof HTMLElement) ? tagIdOrElem : document.getElementById(tagIdOrElem);
     if(!elem || !(elem instanceof HTMLElement))return;
     var parent = elem.parentNode;
+    var newNode = document.createElement(tagType||"span");
     parent.replaceChild(newNode,elem);
 
     return newNode;
