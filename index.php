@@ -12,6 +12,7 @@ include "includes.php";
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="/js/lightbox.js"></script>
         <link href="/css/lightbox.css" rel="stylesheet">
+        <link href="/css/main.css" rel="stylesheet">
         <title><?= "Bilder | " . TITLE ?></title>
         <script>
             var xhr = new XMLHttpRequest();
@@ -30,6 +31,7 @@ include "includes.php";
         </script>
     </head>
     <body class="container">
+        <?php include "navbar.html" ?>
         <h1 class="display-1 m-4">Bilder (assets/examples/italy)</h1>
         <table id="content" class="table bg-light">
             <tr><td><img class="img-thumbnail d-block mx-auto" src="/images/loading.gif" /></td></tr>

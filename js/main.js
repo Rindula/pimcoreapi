@@ -1,20 +1,6 @@
-function titleOnClick(e) {
-    var text = e.innerHTML;
-    elem = transformTag(e, "input");
-
-    elem.value = text;
-
-    elem.focus();
-    elem.addEventListener("blur", save(elem));
-}
-
 function save(e) {
-    var text = e.value;
-    elem = transformTag(e, "h2");
-
-    elem.innerHTML = text;
-
-    elem.addEventListener("click", titleOnClick(elem));
+    if (e.value == $( e ).attr( "data-prevalue")) return;
+    $(e).parents().filter("form").submit();
 }
 
 function transformTag(tagIdOrElem, tagType){
