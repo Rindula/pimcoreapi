@@ -66,7 +66,7 @@ $obj = json_decode($json, true)["data"];
         <title><?= "Bild editieren | " . TITLE ?></title>
     </head>
     <body class="container">
-        
+        <?php include "navbar.php" ?>
         <form action="" method="post" id="form">
         <p>Leer lassen zum löschen</p>
         <?php

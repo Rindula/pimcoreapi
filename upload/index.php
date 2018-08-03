@@ -97,7 +97,7 @@ if(isset($_FILES['image']))
         <title><?= "Bilder | " . TITLE ?></title>
     </head>
     <body class="container">
-        <?php include "../navbar.html" ?>
+        <?php include "../navbar.php" ?>
         <?= (!empty($errors)) ? '<div class="alert alert-danger" role="alert">'.$errMsg.'</div>' : "" ?>
         <h1 class="display-1 m-4">Hochladen</h1>
         <form action="" method="POST" enctype="multipart/form-data">
