@@ -1,5 +1,5 @@
 <?php
-include_once "invludes.php";
+include_once "includes.php";
 ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBar" aria-controls="navBar" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,6 +14,9 @@ include_once "invludes.php";
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/upload">Hochladen</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/user.php">Benutzerinfos</a>
       </li>
     </ul>
   </div>

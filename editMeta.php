@@ -8,7 +8,7 @@ if (isset($_POST["submit"])) {
     $value = $_POST["value"];
     $meta = array();
     for ($i=0; $i < count($key); $i++) { 
-        if (empty($key[$i]) || empty ($value[$i])) continue;
+        if (empty($key[$i])) continue;
         $meta[] = array("name" => $key[$i], "data" => $value[$i], "type" => "input", "language" => "");
     }
     $json = file_get_contents("http://".PIMCORE_HOST."/webservice/rest/asset/id/$id?apikey=".API_KEY);
@@ -28,7 +28,7 @@ if (isset($_POST["submit"])) {
     );
     $context  = stream_context_create($options);
     $result = file_get_contents($url, false, $context);
-    header("Location: ./edit.php?id=".$id);
+    header("Location: ./editMeta.php?id=".$id);
     die($result);
 };
 

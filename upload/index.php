@@ -36,7 +36,7 @@ if(isset($_FILES['image']))
                 "parentId" => 37,
                 "type" => "image",
                 "filename" => utf8_encode($file_name),
-                "path" => "/examples/italy/",
+                "path" => PIMPATH,
                 "mimetype" => utf8_encode($type),
                 "creationDate" => time(),
                 "modificationDate" => time(),
