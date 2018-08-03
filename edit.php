@@ -32,8 +32,6 @@ if (isset($_POST["submit"])) {
     die($result);
 };
 
-$dbh = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASS);
-
 
 $json = file_get_contents("http://".PIMCORE_HOST."/webservice/rest/asset/id/$id?apikey=".API_KEY);
 $obj = json_decode($json, true)["data"];
@@ -72,10 +70,6 @@ $obj = json_decode($json, true)["data"];
         <form action="" method="post" id="form">
         <p>Leer lassen zum löschen</p>
         <?php
-        $sth = $dbh->prepare('SELECT name, data FROM assets_metadata WHERE id = :id');
-        $sth->bindParam(":id", $id);
-        $sth->execute();
-        $result = $sth->fetchAll(PDO::FETCH_BOTH);
         foreach ($obj["metadata"] as $row) {
             
         ?>

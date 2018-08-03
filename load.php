@@ -1,8 +1,10 @@
 <?php
 include "includes.php";
-$dbh = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASS);
 
-foreach ($dbh->query('SELECT id FROM assets WHERE path LIKE "/examples/italy/"') as $row) {
+$ret = file_get_contents("http://".PIMCORE_HOST."/webservice/rest/asset-list?order=ASC&orderKey=id&q={%22path%22:%20%22/examples/italy/%22}&apikey=".API_KEY);
+$retObj = json_decode($ret, true)["data"];
+
+foreach ($retObj as $row) {
     $json = file_get_contents("http://".PIMCORE_HOST."/webservice/rest/asset/id/".$row["id"]."?apikey=".API_KEY);
     $obj = json_decode($json, true)["data"];
 
